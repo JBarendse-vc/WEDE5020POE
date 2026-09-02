@@ -1,0 +1,65 @@
+<!DOCTYPE html> <!--(The IIE, 2026)--> <!--Ensures browser adheres to standard mode, which is best practice-->
+<html lang="en">  <!--(The IIE, 2026)--> <!--Lets the HTML infrastructure know the langugae selected for this is english-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquiry</title>
+</head>
+<body> <!--(The IIE, 2026)--> <!--Houses all content for HTML code-->
+    <header> <!--(The IIE, 2026)-->  <!--Provides the heading of the webpage and marks the start of the webpage-->
+        <p> <!--(The IIE, 2026)--> <!--Paragraph tag is used to group text content of the webpage-->
+            <a href="index.html">Home</a> | <!--(The IIE, 2026)--> <!-- Anchor tag provides links to access other webpages related to this or other websites-->
+            <a href="products.html">Products</a> |
+            <a href="contact.html">Contact Us</a>
+            <a href="about.html">About us</a>
+            <a href="testimonial.html">Testimonial</a>
+        </p>
+    </header>
+
+    <h1 >Contact Us</h1>
+
+    <form action="#" method="post" id="userForm" >     <!--(mailtrap,2024)--> <!--Gives input functionality. The method 'post' is intended to push/send to email--> <!--(The IIE, 2025)-->  <!--JavaScript is implemeneted-->
+      <div>
+        <label for="name">Full Name:</label><br />      <!--(W3Schools, n.d.)--> <!-- The label tag is used to provide a description of the input field and is in connection to the respective input field by using the 'for' attribute. -->
+        <input type="text" id="name" name="name" required /><br /><br />
+      </div>
+
+      <div>
+        <label for="email">Email Address:</label><br />
+        <input type="email" id="email" name="email" required /><br /><br />
+      </div>
+
+      
+      <div>
+        <label for="tel">Phone Number:</label><br />
+        <input type="tel" id="tel" name="tel" required /><br /><br />
+      </div>
+
+      <div>
+        <label for="message">Describe the purpose of your enquiry:</label><br />
+        <textarea               
+          id="message"
+          name="message"
+          rows="5"
+          cols="30"
+          required
+                     
+        ></textarea> <!--(W3Schools, n.d.)--> <!--textarea outlines user input format such as row lines and makes it a requirement to submit to this section.-->
+      </div>
+
+      <div>
+        <p> On completion, please click the 'Send Message' Button </p>
+              <input type="submit" value="Send Message" />
+      </div>
+    </form>
+    <p>
+      Visit us at : Corner of Jeffrey &, Oosterland St, Jeffreys Bay, 6330 <br> Open the map below to find us easily.
+    </p>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.71628120933!2d24.91949467452434!3d-34.05114827315736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e7aff71aaaaaaab%3A0x365b8c9af32b37c3!2sBeesland%20Slaghuis%20%26%20Deli%2C%20Jeffrey's%20Bay!5e0!3m2!1sen!2sza!4v1788385323730!5m2!1sen!2sza" width="600" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe> <!--(The IIE, 2026)-->  <!--iframe tag is used to embed another webpage within the current webpage, in this case, a Google Maps location of the business "Beesland"->
+
+</body>
+</html>
+
+
+<! --Mailtrap (2025) HTML Form Send Email. Available at: https://mailtrap.io/blog/html-form-send-email/ [Accessed on: 2 September 2026]-->
+<!--W3Schools (n.d.) HTML Forms. Available at: https://www.w3schools.com/html/html_forms.asp [Accessed on: 2 September  2026]-->
