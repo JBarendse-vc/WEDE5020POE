@@ -19,6 +19,9 @@ div{
 header,footer{
     background-color:#F4E5C1;
     padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
 
 body{
@@ -28,15 +31,14 @@ body{
 };
 
 
-anchor{
-    text-decoration:none;
-    color:#2B2320;
-    text-align:center;
+a:hover{
+    text-decoration:underline;
 }
 
 /*Specific Logo size class to appear on every webpage*/
 
 .logo{      /*(The IIE, 2026)*/
-    width: 178.02px;
-    height: 175.41px;
+    width: 110.02px;
+    height: 115.41px;
+    padding-right: 20px;
 }
