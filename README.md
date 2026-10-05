@@ -7,17 +7,15 @@
 ## Responsive Web Design Added in Part 2
 ## Screenshots of Tests
 ## Changelog
-## Changelog
 
-### [Unreleased] - Part 2
-- Added: css/style.css with CSS reset
-- Added: ...
+### Part 2 - 5th October 2026
+- Added: css/style.css 
 
-### Part 1 fixes - 5th October 2026
+### Part 1 fixes - 05 October 2026
 - Added: images/CSS folder
 - Added: README.md and this changelog
 
-### Part 1 - DD Month 2026
+### Part 1 - 02 September 2026
 - Added HTML: Home, products, testimonials, about and contact pages
 ## References
 Chipo, 2026. 13 Fundamental Web Design Principles for High Converting Websites. [online] Thrive Themes. Available at: https://thrivethemes.com/fundamental-web-design-principles/ [Accessed 27 Augustr 2026]. 

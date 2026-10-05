@@ -1,0 +1,42 @@
+h1{
+    font-size: 40px;
+    font-family:Inter;
+    font-weight:bold;
+    font-color:#2B2320;
+}
+
+p{
+    font-size: 30px;
+    font-family:Inter;
+    font-weight:normal;
+    font-color:#2B2320;
+}
+
+div{
+    padding: 20px;
+}
+
+header,footer{
+    background-color:#F4E5C1;
+    padding: 10px;
+}
+
+body{
+    background-color:#FDFAF0;
+    margin: 0; /* Remove default margin */
+
+};
+
+
+anchor{
+    text-decoration:none;
+    color:#2B2320;
+    text-align:center;
+}
+
+/*Specific Logo size class to appear on every webpage*/
+
+.logo{      /*(The IIE, 2026)*/
+    width: 178.02px;
+    height: 175.41px;
+}
