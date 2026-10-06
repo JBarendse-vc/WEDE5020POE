@@ -3,6 +3,7 @@ h1{
     font-family:Inter;
     font-weight:bold;
     color:#2B2320;
+    text-align: center;
 }
 
 h2{
@@ -39,7 +40,7 @@ body {
   color: #2B2320;
   line-height: 1.6;
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 0 ;
 }
 
 
@@ -74,6 +75,15 @@ a{
 nav {
     flex: 1;
     flex-wrap: wrap;
+}
+
+form{
+    padding: 20px;
+    border: 1px solid #2B2320;
+    width: 300px;
+    background-color: #fafafa;
+    margin:auto;
+    padding: 20px;
 }
 
 .boxes {
