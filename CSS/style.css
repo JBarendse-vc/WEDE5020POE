@@ -5,6 +5,13 @@ h1{
     font-color:#2B2320;
 }
 
+h2{
+    font-size: 35px;
+    font-family:Inter;
+    font-weight:bold;
+    font-color:#2B2320;
+}
+
 p{
     font-size: 30px;
     font-family:Inter;
@@ -41,4 +48,18 @@ a:hover{
     width: 110.02px;
     height: 115.41px;
     padding-right: 20px;
+}
+
+.boxes {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin:20px;
+}
+
+.box {
+    flex: 1;
+    min-width: 100px;
+    padding: 20px;
+    background-color: #F4E5C1;
 }
