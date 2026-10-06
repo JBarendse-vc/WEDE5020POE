@@ -2,21 +2,21 @@ h1{
     font-size: 40px;
     font-family:Inter;
     font-weight:bold;
-    font-color:#2B2320;
+    color:#2B2320;
 }
 
 h2{
     font-size: 35px;
     font-family:Inter;
     font-weight:bold;
-    font-color:#2B2320;
+    color:#2B2320;
 }
 
 p{
     font-size: 30px;
     font-family:Inter;
     font-weight:normal;
-    font-color:#2B2320;
+    color:#2B2320;
 }
 
 div{
@@ -26,20 +26,41 @@ div{
 header,footer{
     background-color:#F4E5C1;
     padding: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+
 }
 
-body{
-    background-color:#FDFAF0;
-    margin: 0; /* Remove default margin */
+footer{
+    text-align: center;
+}
 
-};
+body {
+  background-color: #FDFAF0;
+  font-family: Inter, Arial, sans-serif;
+  color: #2B2320;
+  line-height: 1.6;
+  max-width: 1000px;
+  margin: 0 auto;
+}
 
 
 a:hover{
-    text-decoration:underline;
+    color: #d45d5d;
+}
+
+a:active{
+    color: #d45d5d;
+    text-decoration: underline;
+}
+
+a:focus{
+    color: #d45d5d;
+    text-decoration: underline;
+}
+
+a{
+    text-decoration: none;
+    color: #2B2320;
+    padding-right: 20px;
 }
 
 /*Specific Logo size class to appear on every webpage*/
@@ -48,6 +69,11 @@ a:hover{
     width: 110.02px;
     height: 115.41px;
     padding-right: 20px;
+}
+
+nav {
+    flex: 1;
+    flex-wrap: wrap;
 }
 
 .boxes {
@@ -61,5 +87,8 @@ a:hover{
     flex: 1;
     min-width: 100px;
     padding: 20px;
-    background-color: #F4E5C1;
+}
+
+img {
+    border-radius: 10px;
 }
