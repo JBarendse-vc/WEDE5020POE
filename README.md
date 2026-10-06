@@ -6,14 +6,16 @@
 ## CSS Added in Part 2
 ## Responsive Web Design Added in Part 2
 ## Screenshots of Tests
+
 ## Changelog
 
-### Part 2 - 5th October 2026
+### Part 2 - 06 October 2026
 - Added: css/style.css 
 
-### Part 1 fixes - 05 October 2026
+### Part 1 fixes - 06 October 2026
 - Added: images/CSS folder
 - Added: README.md and this changelog
+- Added additional HTML code.
 
 ### Part 1 - 02 September 2026
 - Added HTML: Home, products, testimonials, about and contact pages
