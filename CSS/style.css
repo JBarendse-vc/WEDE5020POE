@@ -1,4 +1,4 @@
-h1{
+h1{ /*(The IIE, 2026)*/ /* Sets the style for the tag element, in this case h1 tag being used is the main heading */
     font-size: 40px;
     font-family:Inter;
     font-weight:bold;
@@ -24,36 +24,49 @@ div{
     padding: 20px;
 }
 
-header,footer{
-    background-color:#F4E5C1;
+header{
+    background-color:#F4E5C1; /*(The IIE, 2026)*/ /* Sets the background color of the header and footer sections to a light beige color */
+    display: flex; /*(The IIE, 2026)*/ /* Uses flexbox layout for the header and footer sections */
+    align-items: center; /*(The IIE, 2026)*/ /* Vertically centers the content within the header and footer sections */
+    flex-wrap: wrap;
     padding: 10px;
-
+    font-family: Inter, Arial, sans-serif; /*(The IIE, 2026)*/ /* Sets the font family for the header and footer sections */
+    font-size: 20px;
 }
 
-footer{
-    text-align: center;
+footer {
+    background-color:#F4E5C1; 
+    display: flex; 
+    padding: 10px;
+    font-family: Inter, Arial, sans-serif; 
+    font-size: 20px;
+    justify-content: center; /*(The IIE, 2026)*/ /* Centers
 }
 
-body {
+
+
+
+
+
+body { /*(The IIE, 2026)*/ /* Sets the style for the body tag element, in this case the body tag being used is the main content of the webpage */
   background-color: #FDFAF0;
   font-family: Inter, Arial, sans-serif;
   color: #2B2320;
   line-height: 1.6;
-  max-width: 1000px;
   margin: 0 ;
 }
 
 
-a:hover{
+a:hover{ /*(The IIE, 2026)*/ /* Sets the style for the anchor tag element when it is hovered over */
     color: #d45d5d;
 }
 
-a:active{
+a:active{ /*(The IIE, 2026)*/ /* Sets the style for the anchor tag element when it is active (clicked) */
     color: #d45d5d;
     text-decoration: underline;
 }
 
-a:focus{
+a:focus{ /*(The IIE, 2026)*/ /* Sets the style for the anchor tag element when it is focused (selected) */
     color: #d45d5d;
     text-decoration: underline;
 }
@@ -85,12 +98,18 @@ form{
     margin:auto;
     padding: 20px;
 }
-
+/* Custom classes for layout containers */
 .boxes {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
     margin:20px;
+}
+
+/* Keeps table images small (The IIE, 2026) */
+td img {
+    width: 60px;
+    height: 60px;
 }
 
 .box {
@@ -99,6 +118,69 @@ form{
     padding: 20px;
 }
 
+/* Responsive design: tablet screens (The IIE, 2026) */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 30px;
+    }
+    h2 {
+        font-size: 26px;
+    }
+    .boxes { /*(The IIE, 2026)*/ /* Resets the style of this container and other tags specified when a certain media query, this case max-width, is reached. */
+        flex-direction: column;
+    }
+}
+
+/* Responsive design: mobile screens (The IIE, 2026) */
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    p {
+        font-size: 16px;
+    }
+    form {
+        width: 100%;
+    }
+    iframe {
+        max-width: 100%;
+    }
+}
+
+/* Additional styling for images (The IIE, 2026) */
 img {
     border-radius: 10px;
+}
+
+/* Table styling (The IIE, 2026) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid #2B2320;
+    padding: 10px;
+    text-align: left;
+}
+
+caption {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+th {
+    border: 1px solid #2B2320;
+    padding: 10px;
+    text-align: left;
+    background-color: #F4E5C1;
+}
+
+
+td img {
+    width: 60px;
+    height: 60px;
 }
