@@ -6,7 +6,11 @@
 ## CSS Added in Part 2
 ## Responsive Web Design Added in Part 2
 ## Screenshots of Tests
-
+![Home page](Images/Screenshots/Home.png)
+![Products page](Images/Screenshots/Products.png)
+![Contact page](Images/Screenshots/Contact.png)
+![About page](Images/Screenshots/About.png)
+![Testimonial page](Images/Screenshots/Testimonials.png)
 ## Changelog
 
 ### Part 2 - 06 October 2026
