@@ -22,24 +22,16 @@
       <div class="content">
         <h1 >Contact Us</h1>
 
-        <form action="#" method="post" id="userForm" >     <!--(mailtrap,2024)--> <!--Gives input functionality. The method 'post' is intended to push/send to email--> <!--(The IIE, 2025)-->  <!--JavaScript is implemeneted-->
-          <div>
-            <label for="name">Full Name:</label><br />      <!--(W3Schools, n.d.)--> <!-- The label tag is used to provide a description of the input field and is in connection to the respective input field by using the 'for' attribute. -->
-            <input type="text" id="name" name="name" required /><br /><br />
-          </div>
+        <form name="cForm" action="#" onsubmit="return validateForm()" method="post" class="customform" >     <!--(mailtrap,2024)--> <!--Gives input functionality. The method 'post' is intended to push/send to email--> <!--(The IIE, 2025)-->  <!--JavaScript is implemeneted-->  <!-- W3Schools, n.d. Form validation is implemented through the use of JavaScript --> 
+            <label for="fname">Full Name:</label><br />      <!--(W3Schools, n.d.)--> <!-- The label tag is used to provide a description of the input field and is in connection to the respective input field by using the 'for' attribute. -->
+            <input type="text" id="fname" name="fname" required /><br /><br />
 
-          <div>
             <label for="email">Email Address:</label><br />
             <input type="email" id="email" name="email" required /><br /><br />
-          </div>
+  
+            <label for="pnumber">Phone Number:</label><br />
+            <input type="tel" id="pnumber" name="pnumber" required /><br /><br />
 
-          
-          <div>
-            <label for="tel">Phone Number:</label><br />
-            <input type="tel" id="tel" name="tel" required /><br /><br />
-          </div>
-
-          <div>
             <label for="message">Describe the purpose of your enquiry:</label><br />
             <textarea               
               id="message" 
@@ -49,12 +41,11 @@
               required
                         
             ></textarea> <!--(W3Schools, n.d.)--> <!--textarea outlines user input format such as row lines and makes it a requirement to submit to this section.-->
-          </div>
 
-          <div>
+
             <p> On completion, please click the 'Send Message' Button </p>
-                  <input type="submit" value="Send Message" class="submitButton" />
-          </div>
+            <input type="submit" value="Send Message" class="submitButton" />
+
         </form>
         <h3>
           Visit us at : Corner of Jeffrey &, Oosterland St, Jeffreys Bay, 6330 <br> Open the map below to find us easily.
@@ -65,6 +56,9 @@
               &copy; 2026 Beesland Butchery. All rights reserved. 
       </footer>
     </main>
+    <script src="../JavaScript/jquery-1.10.2.min.js"></script>
+    <script src="../JavaScript/lightbox-2.6.min.js"></script>
+    <script src="../JavaScript/Validation.js" defer></script>
 </body>
 </html>
 
