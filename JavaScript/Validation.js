@@ -24,7 +24,7 @@ function validateForm() { //W3Schools, n.d.
         alert("Please enter a 10 digit contact number starting with 0");
         return false;
     }
-    console.log("Form submitted successfully!"); //The IIE, 2026
+    console.log("Form submitted successfully!"); //The IIE, 2026 //Updates the console to show that the form has been submitted successfully
 }
 
 

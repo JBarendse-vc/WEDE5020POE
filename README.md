@@ -14,6 +14,7 @@
 ## Changelog
 ### Part 3 - 09 Novemeber 2026
 - Implemented meta tags across HTML pages
+- Implemented JavaScript (folder with .js files): JQuery, LightBox, and Form Validation.
 
 ### Part 2 - 06 October 2026
 - Added: css/style.css 
