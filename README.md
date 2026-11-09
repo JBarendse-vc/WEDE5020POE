@@ -13,7 +13,7 @@
 ![Testimonial page](Images/Screenshots/Testimonials.png)
 ## Changelog
 ### Part 3 - 09 Novemeber 2026
-- 
+- Implemented meta tags across HTML pages
 
 ### Part 2 - 06 October 2026
 - Added: css/style.css 
