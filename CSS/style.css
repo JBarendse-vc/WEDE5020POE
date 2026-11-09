@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
 h1{ /*(The IIE, 2026)*/ /* Sets the style for the tag element, in this case h1 tag being used is the main heading */
     font-size: 40px;
-    font-family:Inter;
+    font-family:Arial, sans-serif;
     font-weight:bold;
     color:#2B2320;
     text-align: center;
@@ -8,14 +10,14 @@ h1{ /*(The IIE, 2026)*/ /* Sets the style for the tag element, in this case h1 t
 
 h2{
     font-size: 35px;
-    font-family:Inter;
+    font-family:Arial, sans-serif;
     font-weight:bold;
     color:#2B2320;
 }
 
 p{
     font-size: 30px;
-    font-family:Inter;
+    font-family:Arial, sans-serif;
     font-weight:normal;
     color:#2B2320;
 }
@@ -30,7 +32,7 @@ header{
     align-items: center; /*(The IIE, 2026)*/ /* Vertically centers the content within the header and footer sections */
     flex-wrap: wrap;
     padding: 10px;
-    font-family: Inter, Arial, sans-serif; /*(The IIE, 2026)*/ /* Sets the font family for the header and footer sections */
+    font-family: Arial, sans-serif; /*(The IIE, 2026)*/ /* Sets the font family for the header and footer sections */
     font-size: 20px;
 }
 
@@ -38,22 +40,41 @@ footer {
     background-color:#F4E5C1; 
     display: flex; 
     padding: 10px;
-    font-family: Inter, Arial, sans-serif; 
+    font-family: Arial, sans-serif; 
     font-size: 20px;
-    justify-content: center; /*(The IIE, 2026)*/ /* Centers
+    justify-content: center; /*(The IIE, 2026)*/ /* Centers contenett horizontally within the footer section */
+}
+
+.submitButton {
+    background-color: #F4E5C1;
+    color: #2B2320;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
 }
 
 
+.submitButton:hover {
+     /*(The IIE, 2026)*/ /* Sets the style for the button tag element when it is hovered over */
+    background-color: #c2f4c1; /*(The IIE, 2026)*/ /* Sets the background color of buttons to a light beige color */
+    color: #2B2320; /*(The IIE, 2026)*/ /* Sets the text color of buttons to a dark brown color */
+    border: none; /*(The IIE, 2026)*/ /* Removes the default border from buttons */
 
+    text-align: center; /*(The IIE, 2026)*/ /* Centers the text inside the button */
+    text-decoration: none; /*(The IIE, 2026)*/ /* Removes underline from button text */
+    cursor: pointer; /*(The IIE, 2026)*/ /* Changes the cursor to a pointer when hovering over the button */
+}
 
 
 
 body { /*(The IIE, 2026)*/ /* Sets the style for the body tag element, in this case the body tag being used is the main content of the webpage */
   background-color: #FDFAF0;
-  font-family: Inter, Arial, sans-serif;
+  font-family: Arial, sans-serif;
   color: #2B2320;
   line-height: 1.6;
-  margin: 0 ;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 
@@ -96,7 +117,6 @@ form{
     width: 300px;
     background-color: #fafafa;
     margin:auto;
-    padding: 20px;
 }
 /* Custom classes for layout containers */
 .boxes {
@@ -106,11 +126,6 @@ form{
     margin:20px;
 }
 
-/* Keeps table images small (The IIE, 2026) */
-td img {
-    width: 60px;
-    height: 60px;
-}
 
 .box {
     flex: 1;
@@ -121,14 +136,18 @@ td img {
 /* Responsive design: tablet screens (The IIE, 2026) */
 @media screen and (max-width: 768px) {
     h1 {
-        font-size: 30px;
+        font-size: 40px;
     }
     h2 {
-        font-size: 26px;
+        font-size: 36px;
+    }
+    p {
+        font-size: 18px;
     }
     .boxes { /*(The IIE, 2026)*/ /* Resets the style of this container and other tags specified when a certain media query, this case max-width, is reached. */
         flex-direction: column;
     }
+
 }
 
 /* Responsive design: mobile screens (The IIE, 2026) */
@@ -148,6 +167,13 @@ td img {
     iframe {
         max-width: 100%;
     }
+    header { justify-content: center; }
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        flex-basis: 100%;
+    }
 }
 
 /* Additional styling for images (The IIE, 2026) */
@@ -163,7 +189,6 @@ table {
 
 td {
     border: 1px solid #2B2320;
-    padding: 10px;
     text-align: left;
 }
 
@@ -174,13 +199,53 @@ caption {
 
 th {
     border: 1px solid #2B2320;
-    padding: 10px;
     text-align: left;
     background-color: #F4E5C1;
 }
 
 
+/* Keeps table images small (The IIE, 2026) */
 td img {
     width: 60px;
     height: 60px;
+    border-radius: 0px;
 }
+
+td img:hover {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+}
+
+/* ------------------------------------------------------------ */
+
+.content {
+    flex: 1;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+iframe {
+    display: block;
+    margin: 0 auto;
+}
+
+input:focus{
+    background-color: #c2f4c1;
+    /* Changes the background of the user input when clicked upon */
+}
+
+textarea:focus{
+    background-color: #c2f4c1;
+    /* Changes the background of the user text area for the description textbox on form */
+}
+
+tr:hover {
+    background-color: #c2f4c1;
+    /* Changes the background of the table row when hovered over */
+}
+
+  /* Google Fonts (n.d.) Inter. Available at: https://fonts.google.com/specimen/Inter [Accessed on: 9 November 2026] */

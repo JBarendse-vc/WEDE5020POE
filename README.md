@@ -12,6 +12,8 @@
 ![About page](Images/Screenshots/About.png)
 ![Testimonial page](Images/Screenshots/Testimonials.png)
 ## Changelog
+### Part 3 - 09 Novemeber 2026
+- 
 
 ### Part 2 - 06 October 2026
 - Added: css/style.css 
@@ -21,8 +23,25 @@
 - Added: README.md and this changelog
 - Added additional HTML code.
 
+### Part 2 fixes - 09 Novemeber 2026
+### Added
+- Pseudo-classes: :hover, :active, :focus-visible; :focus on form inputs; :hover on images and table rows
+- Font import for Inter with Arial/sans-serif fallback
+- Shared .content container on all pages
+### Changed
+- Submit button hover no longer changes size
+- Tablet paragraph size reduced to 18px
+- Mobile nav centered 
+### Fixed
+- Unclosed <h2> in testimonial.html
+- Removed duplicate CSS rules (td img, form padding)
+- {IN-PROGESS, NEEDS ANOTHER LOOK AT ALL CODE DREW}Fixed heading,footer and page size inconsistencies accross individual pages
+
+
 ### Part 1 - 02 September 2026
 - Added HTML: Home, products, testimonials, about and contact pages
+
+
 ## References
 Chipo, 2026. 13 Fundamental Web Design Principles for High Converting Websites. [online] Thrive Themes. Available at: https://thrivethemes.com/fundamental-web-design-principles/ [Accessed 27 Augustr 2026]. 
 
