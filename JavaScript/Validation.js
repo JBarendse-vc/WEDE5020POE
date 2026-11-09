@@ -1,21 +1,21 @@
 function validateForm() { //W3Schools, n.d.
-    let x = document.forms["cForm"]["fname"].value;
-    let z = document.forms["cForm"]["sname"].value;
-    let a = document.forms["cForm"]["email"].value;
+    let x = document.forms["cForm"]["fname"].value.trim();
+    //let z = document.forms["cForm"]["sname"].value.trim();
+    let a = document.forms["cForm"]["email"].value.trim(); //W3Schools, n.d.
     let b = document.forms["cForm"]["pnumber"].value.trim(); //W3Schools,n.d.
 
 
-    const numberL = /^0\d{12}$/; //0 makes sure the number starts of with zero (W3Schools, n.d.)
+    const numberL = /^0\d{9}$/; //0 makes sure the number starts of with zero (W3Schools, n.d.)
 
 
     if (x==""){
         alert("Name must be filled out")
         return false;
     }
-    if (z==""){
-        alert("Name must be filled out")
-        return false;
-    }
+    // if (z==""){
+    //     alert("Name must be filled out")
+    //     return false;
+    //}
     if (!a.includes("@") || !a.includes(".")) { //The IIE, 2026
         alert("Enter a valid email");
         return false; 
@@ -25,6 +25,8 @@ function validateForm() { //W3Schools, n.d.
         return false;
     }
     console.log("Form submitted successfully!"); //The IIE, 2026 //Updates the console to show that the form has been submitted successfully
+    return true; //The IIE, 2026 //Returns true if the form is valid and can be submitted
+
 }
 
 
@@ -39,3 +41,5 @@ function validateForm() { //W3Schools, n.d.
 //https://stackoverflow.com/questions/11722400/programmatically-change-the-src-of-an-img-tag
 
 //https://www.w3schools.com/js/js_validation.asp
+
+//https://www.w3schools.com/jsref/jsref_trim_string.asp
