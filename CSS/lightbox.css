@@ -1,0 +1,240 @@
+
+body:after {
+  /* Preloading affect to the lightbox images, basically attaches them to a hidden pseudo-element, this ensures the are preprepared when the lightbox opens (The IIE,2026) */
+  content: url(../images/close.png) url(../images/loading.gif) url(../images/prev.png) url(../images/next.png);
+  display: none;
+}
+
+.lightboxOverlay {
+  position: absolute; 
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: black;
+  /* This is the opacity fallback for old versions of Internet Explorer (The IIE, 2026) */
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+  display: none;
+}
+
+
+.lightbox {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+  text-align: center;
+  line-height: 0; /* Removes extra gaps that appear below inline images */
+  font-weight: normal;
+}
+
+
+.lightbox .lb-image {
+  display: block;
+  height: auto;
+  /* prefixes for older browsers: ms,moz,o,webkit (The IIE, 2026) */
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+
+
+.lightbox a img {
+  border: none;
+  /* Removes the default border  (The IIE, 2026)*/
+}
+
+
+.lb-outerContainer {
+  /* Image resizing. Starts at 250x250px and is centred horizontally. The JavaScript code resizes it to fit the image */
+  position: relative;
+  background-color: white;
+  zoom: 1; /* Triggers layout in old Internet Explorer */
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+}
+
+.lb-outerContainer:after {
+  content: "";
+  display: table;
+  clear: both;
+  /*  makes sure the data container wraps its floated content */
+}
+
+
+.lb-container {
+  padding: 4px;
+}
+
+
+.lb-loader {
+  /* positions media content  in the middle of the box
+   while the image is loading */
+  position: absolute;
+  top: 43%;
+  left: 0%;
+  height: 25%;
+  width: 100%;
+  text-align: center;
+  line-height: 0;
+}
+
+
+.lb-cancel {
+  /* shows the animated loading.gif */
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin: 0 auto;
+  background: url(../images/loading.gif) no-repeat;
+}
+
+.lb-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+}
+
+/* Aligns the nav area to the left edge of the container */
+.lb-container > .nav {
+  /* ">" symbol is a child combinator. Basically parent>child element that determines what the child inherits when they are wrapped in the class element .lb-container (MDN Web Docs, 2025) */
+  left: 0;
+}
+
+
+.lb-nav a {
+  outline: none;
+  /* Makes sure the focus outline isn't present when the nav links are clicked */
+}
+
+
+.lb-prev, .lb-next {
+  /* The clickable previous/next zones */
+  width: 49%;
+  height: 100%;
+  cursor: pointer;
+  /* This makes the interactive element turn into a pointer when hovered over */
+  display: block;
+}
+
+
+.lb-prev {
+  left: 0;
+  float: left;
+}
+
+.lb-prev:hover {
+  background: url(../images/prev.png) left 48% no-repeat;
+}
+
+
+.lb-next {
+  /* The right half of the image is an interactive element.When pressed/clicked it goes to the next image */
+  right: 0; 
+  /* right: 0 makes the element align to the right edge of its container  */
+  float: right;
+}
+
+.lb-next:hover {
+  /* Shows the "next" arrow when hovering */
+  background: url(../images/next.png) right 48% no-repeat;
+}
+
+
+.lb-dataContainer {
+  margin: 0 auto;
+  padding-top: 5px;
+  zoom: 1;
+  width: 100%;
+  -moz-border-radius-bottomleft: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+
+.lb-dataContainer:after {
+  content: "";
+  display: table;
+  clear: both;
+  /* Clearfix makes sure the data container wraps its floated content */
+}
+
+
+.lb-data {
+  padding: 0 4px;
+  color: #bbbbbb;
+}
+
+
+.lb-data .lb-details {
+  /* Left-aligned block, contains the caption and image number */
+  width: 85%;
+  float: left;
+  text-align: left;
+  line-height: 1.1em;
+}
+
+.lb-data .lb-caption {
+
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 1em;
+  /* line-height 1em makes sure that each line is as tall as the font size.
+   (The IIE, 2026) */
+}
+
+.lb-data .lb-number {
+  /* (The IIE,2026) Image 1 of 5 counter is styled now to be smaller, dimmer grey, and placed having its own space
+   line below the caption */
+  display: block;
+  clear: left;
+  padding-bottom: 1em;
+  font-size: 12px;
+  color: #999999;
+}
+
+.lb-data .lb-close {
+  /* The close button, floated to the right using close.png.
+   It's a bit faded by default (opacity: 0.7 == 70% opacity) */
+  display: block;
+  float: right;
+  width: 30px;
+  height: 30px;
+  background: url(../images/close.png) top right no-repeat;
+  text-align: right;
+  outline: none;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+}
+
+
+.lb-data .lb-close:hover {
+  /*(The IIE, 2026)
+  On hover, the close button becomesopaque and shows a pointer cursor instead of a normal cursor*/
+  cursor: pointer;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
+/* Mozilla, n.d. CSS values and units. [online] Available at: https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units [Accessed 10 November 2026].
+
+
+WMtips, n.d. CSS vendor properties: the complete reference. [online] Available at: https://www.wmtips.com/css/css-vendor-properties-complete-reference [Accessed 10 November 2026]. */
+
+/* The Independent Institute of Education. Web Development (Introduction). WEDE5020/d/p/w Module Manual 2026 (First Edition: 2012) [Accessed on: 10 November 2026] */
+
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/Child_combinator */
