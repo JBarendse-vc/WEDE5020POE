@@ -37,6 +37,7 @@
 - Unclosed <h2> in testimonial.html
 - Removed duplicate CSS rules (td img, form padding)
 - {IN-PROGESS, NEEDS ANOTHER LOOK AT ALL CODE DREW}Fixed heading,footer and page size inconsistencies accross individual pages
+- Map iframe width , removed fix with intext CSS 
 
 
 ### Part 1 - 02 September 2026
