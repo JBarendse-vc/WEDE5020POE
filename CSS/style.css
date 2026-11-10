@@ -27,22 +27,39 @@ div{
 }
 
 header{
-    background-color:#F4E5C1; /*(The IIE, 2026)*/ /* Sets the background color of the header and footer sections to a light beige color */
+    background-color: transparent;
     display: flex; /*(The IIE, 2026)*/ /* Uses flexbox layout for the header and footer sections */
     align-items: center; /*(The IIE, 2026)*/ /* Vertically centers the content within the header and footer sections */
     flex-wrap: wrap;
     padding: 10px;
     font-family: Arial, sans-serif; /*(The IIE, 2026)*/ /* Sets the font family for the header and footer sections */
     font-size: 20px;
+    position: relative;
+    isolation: isolate;
 }
 
 footer {
-    background-color:#F4E5C1; 
+    background-color: transparent;
     display: flex; 
     padding: 10px;
     font-family: Arial, sans-serif; 
     font-size: 20px;
     justify-content: center; /*(The IIE, 2026)*/ /* Centers contenett horizontally within the footer section */
+    position: relative;
+    isolation: isolate;
+}
+
+header::before,
+footer::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 100vw;
+    transform: translateX(-50%);
+    background-color: #F4E5C1;
 }
 
 .submitButton {
@@ -69,6 +86,7 @@ footer {
 
 body { /*(The IIE, 2026)*/ /* Sets the style for the body tag element, in this case the body tag being used is the main content of the webpage */
   background-color: #FDFAF0;
+  margin: 0;
   font-family: Arial, sans-serif;
   color: #2B2320;
   line-height: 1.6;
@@ -226,6 +244,15 @@ td img:hover {
     box-sizing: border-box;
 }
 
+body > main.content {
+    display: flex;
+    flex-direction: column;
+}
+
+body > main.content > footer {
+    margin-top: auto;
+}
+
 iframe {
     display: block;
     margin: 0 auto;
@@ -253,6 +280,22 @@ tr:hover {
     flex-direction: row;
     align-content: center;
     justify-self: center ;
+}
+
+.galleryimg {
+    display: block;
+    width: 260px;
+    max-width: 100%;
+    height: 140px;
+    box-sizing: border-box;
+    object-fit: cover;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 6px solid rgb(146, 146, 146);
+
+}
+.galleryimg:hover {
+    border-color: rgb(157, 90, 9);
 }
 
   /* Google Fonts (n.d.) Inter. Available at: https://fonts.google.com/specimen/Inter [Accessed on: 9 November 2026] */

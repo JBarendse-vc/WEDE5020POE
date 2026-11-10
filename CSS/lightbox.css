@@ -1,7 +1,7 @@
 
 body:after {
   /* Preloading affect to the lightbox images, basically attaches them to a hidden pseudo-element, this ensures the are preprepared when the lightbox opens (The IIE,2026) */
-  content: url(../images/close.png) url(../images/loading.gif) url(../images/prev.png) url(../images/next.png);
+  content: url(../Images/close.png) url(../Images/loading.gif) url(../Images/prev.png) url(../Images/next.png);
   display: none;
 }
 
@@ -230,11 +230,10 @@ body:after {
   opacity: 1;
 }
 
-/* Mozilla, n.d. CSS values and units. [online] Available at: https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units [Accessed 10 November 2026].
+/*The Independent Institute of Education, 2026. Web Development (Introduction). WEDE5020/d/p/w Module Manual 2026 (First Edition: 2012). [online] Available at: <PASTE THE URL OR PORTAL LINK YOU USED> [Accessed 10 November 2026].
 
+Mozilla, n.d.a. CSS values and units. [online] Available at: https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units [Accessed 10 November 2026].
+
+Mozilla, n.d.b. Child combinator. [online] Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/Child_combinator [Accessed 10 November 2026].
 
 WMtips, n.d. CSS vendor properties: the complete reference. [online] Available at: https://www.wmtips.com/css/css-vendor-properties-complete-reference [Accessed 10 November 2026]. */
-
-/* The Independent Institute of Education. Web Development (Introduction). WEDE5020/d/p/w Module Manual 2026 (First Edition: 2012) [Accessed on: 10 November 2026] */
-
-/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/Child_combinator */
