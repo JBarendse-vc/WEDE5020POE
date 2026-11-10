@@ -29,6 +29,25 @@ function validateForm() { //W3Schools, n.d.
 
 }
 
+//  W3Schools (n.d.) , Searchbox for an item
+function search_product() {
+    let input = document.getElementById('searchbar').value.toLowerCase();
+    let x = document.getElementsByClassName('product');
+    let found = 0;
+
+    for (let i = 0; i < x.length; i++) {
+        if (!x[i].textContent.toLowerCase().includes(input)) {
+            x[i].style.display = "none";
+        } else {
+            x[i].style.display = "table-row";
+            found++;
+        }
+    }
+
+    // Show the message only when no rows match
+    document.getElementById('noResults').style.display = (found === 0) ? "block" : "none";
+}
+
 
 // https://www.w3schools.in/javascript/validate-a-phone-number
 

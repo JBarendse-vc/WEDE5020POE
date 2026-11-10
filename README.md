@@ -38,6 +38,7 @@
 - Removed duplicate CSS rules (td img, form padding)
 - {IN-PROGESS, NEEDS ANOTHER LOOK AT ALL CODE DREW}Fixed heading,footer and page size inconsistencies accross individual pages
 - Map iframe width , removed fix with intext CSS 
+- Updated generic webpage titles across HTML files
 
 
 ### Part 1 - 02 September 2026

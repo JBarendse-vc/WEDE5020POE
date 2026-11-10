@@ -1,0 +1,153 @@
+<!DOCTYPE html> <!--(The IIE, 2026)--> <!--Ensures browser adheres to standard mode, which is best practice-->
+<html lang="en">  <!--(The IIE, 2026)--> <!--Lets the HTML infrastructure know the language selected for this is english-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Enquiry | Beesland Slaghuis, Jeffreys Bay</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <meta name="description" content="Send a product enquiry to Beesland Slaghuis in Jeffreys Bay. Choose a product, tell us the quantity and how you would like to be contacted.">
+    <meta name="keywords" content="product enquiry, order meat Jeffreys Bay, Beesland Slaghuis, butchery enquiry, biltong, lamb, beef, polony">
+    <!-- (The IIE, 2026) Meta tags are implemented for Search Engine Optimization -->
+</head>
+<body> <!--(The IIE, 2026)--> <!--Houses all content for HTML code-->
+    <main class="content"> <!--(The IIE, 2026)--> <!--Main tag is used to group together the content of the webpage-->
+        <header> <!--(The IIE, 2026)-->  <!--Provides the heading of the webpage and marks the start of the webpage-->
+            <img src="../Images/logo.png" class="logo" alt="Beesland Butchery Logo">
+            <nav> <!--(The IIE, 2026)--> <!--Nav tag groups the links to the other webpages-->
+                <a href="index.html">Home</a> |
+                <a href="products.html">Products</a> |
+                <a href="enquiry.html">Enquiry</a> |
+                <a href="contact.html">Contact Us</a> |
+                <a href="about.html">About us</a> |
+                <a href="testimonial.html">Testimonial</a>
+            </nav>
+        </header>
+
+        <h1>Product Enquiry</h1>
+
+        <!-- Submits the form using Formspree. (Formspree, n.d.) -->
+        <form name="cForm" id="enquiryForm" action="https://formspree.io/f/mzerpdyj" method="post" onsubmit="return submitEnquiry(event)" class="customform">
+
+            <label for="fname">Full Name:</label><br />
+            <input type="text" id="fname" name="fname" required /><br /><br />
+
+            <label for="email">Email Address:</label><br />
+            <input type="email" id="email" name="email" required /><br /><br />
+
+            <label for="pnumber">Phone Number:</label><br />
+            <input type="tel" id="pnumber" name="pnumber" required /><br /><br />
+
+            <label for="product">Product you are asking about:</label><br />
+            <select id="product" name="product">
+                <option value="">-- Choose a product --</option>
+                <option value="Lamb">Lamb</option>
+                <option value="Beef">Beef</option>
+                <option value="Polony">Polony</option>
+                <option value="Biltong">Biltong</option>
+                <option value="Other">Other</option>
+            </select><br />
+            <span class="error" id="productError"></span><br />
+
+            <label for="quantity">Quantity (kg):</label><br />
+            <input type="number" id="quantity" name="quantity" min="1" step="1" /><br />
+            <span class="error" id="quantityError"></span><br />
+
+            <fieldset>
+                <legend>How should we contact you?</legend>
+                <input type="radio" id="contactEmail" name="contactMethod" value="Email" />
+                <label for="contactEmail">Email</label>
+                <input type="radio" id="contactPhone" name="contactMethod" value="Phone" />
+                <label for="contactPhone">Phone</label>
+            </fieldset>
+            <span class="error" id="methodError"></span><br />
+
+            <label for="message">Enquiry details:</label><br />
+            <textarea id="message" name="message" rows="5" cols="30" required></textarea>
+
+            <p>On completion, please click the 'Send Enquiry' button</p>
+            <input type="submit" value="Send Enquiry" class="submitButton" />
+
+            <!-- Response shown to the user straight after the form is sent -->
+            <p id="formResponse" role="status"></p>
+        </form>
+
+        <footer>  <!--(The IIE, 2026)--> <!--Provides the footer of the webpage and marks the end of the webpage-->
+                &copy; 2026 Beesland Butchery. All rights reserved.
+        </footer>
+    </main>
+
+    <script src="../JavaScript/Validation.js" defer></script>
+    <script>
+        // Runs when the form is submitted
+        function submitEnquiry(event) {
+            // Stop the browser from reloading the page, so we can show a message instead
+            event.preventDefault();
+
+            const form = document.getElementById("enquiryForm");
+            const response = document.getElementById("formResponse");
+            response.textContent = "";
+
+            // 1. Existing validation for name, email, phone and message (Validation.js)
+            if (!validateForm()) {
+                return false;
+            }
+
+            // 2. Extra checks for the fields that are only on this form
+            let valid = true;
+
+            if (document.getElementById("product").value === "") {
+                document.getElementById("productError").textContent = "Please choose a product.";
+                valid = false;
+            } else {
+                document.getElementById("productError").textContent = "";
+            }
+
+            const quantity = document.getElementById("quantity").value;
+            if (quantity === "" || Number(quantity) < 1) {
+                document.getElementById("quantityError").textContent = "Please enter a quantity of 1 kg or more.";
+                valid = false;
+            } else {
+                document.getElementById("quantityError").textContent = "";
+            }
+
+            if (!document.querySelector('input[name="contactMethod"]:checked')) {
+                document.getElementById("methodError").textContent = "Please choose how we should contact you.";
+                valid = false;
+            } else {
+                document.getElementById("methodError").textContent = "";
+            }
+
+            if (!valid) {
+                response.textContent = "Please fix the errors above and try again.";
+                return false;
+            }
+
+            // 3. Send the form to Formspree and show a message on this page
+            response.textContent = "Sending your enquiry...";
+
+            fetch(form.action, {
+                method: "POST",
+                body: new FormData(form),
+                headers: { "Accept": "application/json" }
+            })
+            .then(function (result) {
+                if (result.ok) {
+                    response.textContent = "Thank you! Your enquiry has been sent. We will contact you soon.";
+                    form.reset();
+                } else {
+                    response.textContent = "Sorry, something went wrong. Please try again later.";
+                }
+            })
+            .catch(function () {
+                response.textContent = "Sorry, we could not send your enquiry. Please check your connection and try again.";
+            });
+
+            return false;
+        }
+    </script>
+</body>
+</html>
+
+<!--The Independent Institute of Education. Web Development (Introduction). WEDE5020/d/p/w Module Manual 2026 (First Edition: 2012) [Accessed on: 10 November 2026]-->
+
+<!-- https://formspree.io/ -->
