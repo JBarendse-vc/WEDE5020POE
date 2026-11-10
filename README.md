@@ -13,8 +13,12 @@
 ![Testimonial page](Images/Screenshots/Testimonials.png)
 ## Changelog
 ### Part 3 - 09 Novemeber 2026
-- Implemented meta tags across HTML pages
+- Implemented meta tags (description and keywords) across HTML pages
 - Implemented JavaScript (folder with .js files): JQuery, LightBox, and Form Validation.
+- Implmented enquiry.html page 
+- Implmented FormSpree link to post each form created .
+- Page is set to be live(deployed) for view in Github pages
+- Updated header anchor tags to include new Enquiry HTML page.
 
 ### Part 2 - 06 October 2026
 - Added: css/style.css 
