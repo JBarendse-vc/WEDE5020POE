@@ -26,8 +26,7 @@
         <h1>Product Enquiry</h1>
 
         <!-- Submits the form using Formspree. (Formspree, n.d.) -->
-        <form name="cForm" id="enquiryForm" action="https://formspree.io/f/mzerpdyj" method="post" onsubmit="return submitEnquiry(event)" class="customform">
-
+        <form name="cForm" action="https://formspree.io/f/YOUR_FORM_ID" onsubmit="return validateForm()" method="post" class="customform">
             <label for="fname">Full Name:</label><br />
             <input type="text" id="fname" name="fname" required /><br /><br />
 
@@ -38,37 +37,29 @@
             <input type="tel" id="pnumber" name="pnumber" required /><br /><br />
 
             <label for="product">Product you are asking about:</label><br />
-            <select id="product" name="product">
-                <option value="">-- Choose a product --</option>
+            <select id="product" name="product" required>
+                <option value="">Choose a product</option>
                 <option value="Lamb">Lamb</option>
                 <option value="Beef">Beef</option>
                 <option value="Polony">Polony</option>
                 <option value="Biltong">Biltong</option>
-                <option value="Other">Other</option>
-            </select><br />
-            <span class="error" id="productError"></span><br />
+            </select><br /><br />
 
             <label for="quantity">Quantity (kg):</label><br />
-            <input type="number" id="quantity" name="quantity" min="1" step="1" /><br />
-            <span class="error" id="quantityError"></span><br />
+            <input type="number" id="quantity" name="quantity" min="1" required /><br /><br />
 
-            <fieldset>
-                <legend>How should we contact you?</legend>
-                <input type="radio" id="contactEmail" name="contactMethod" value="Email" />
-                <label for="contactEmail">Email</label>
-                <input type="radio" id="contactPhone" name="contactMethod" value="Phone" />
-                <label for="contactPhone">Phone</label>
-            </fieldset>
-            <span class="error" id="methodError"></span><br />
+            <label for="contactMethod">How should we contact you?</label><br />
+            <select id="contactMethod" name="contactMethod" required>
+                <option value="">Choose one</option>
+                <option value="Email">Email</option>
+                <option value="Phone">Phone</option>
+            </select><br /><br />
 
             <label for="message">Enquiry details:</label><br />
             <textarea id="message" name="message" rows="5" cols="30" required></textarea>
 
-            <p>On completion, please click the 'Send Enquiry' button</p>
+            <p> On completion, please click the 'Send Enquiry' Button </p>
             <input type="submit" value="Send Enquiry" class="submitButton" />
-
-            <!-- Response shown to the user straight after the form is sent -->
-            <p id="formResponse" role="status"></p>
         </form>
 
         <footer>  <!--(The IIE, 2026)--> <!--Provides the footer of the webpage and marks the end of the webpage-->
@@ -77,74 +68,6 @@
     </main>
 
     <script src="../JavaScript/Validation.js" defer></script>
-    <script>
-        // Runs when the form is submitted
-        function submitEnquiry(event) {
-            // Stop the browser from reloading the page, so we can show a message instead
-            event.preventDefault();
-
-            const form = document.getElementById("enquiryForm");
-            const response = document.getElementById("formResponse");
-            response.textContent = "";
-
-            // 1. Existing validation for name, email, phone and message (Validation.js)
-            if (!validateForm()) {
-                return false;
-            }
-
-            // 2. Extra checks for the fields that are only on this form
-            let valid = true;
-
-            if (document.getElementById("product").value === "") {
-                document.getElementById("productError").textContent = "Please choose a product.";
-                valid = false;
-            } else {
-                document.getElementById("productError").textContent = "";
-            }
-
-            const quantity = document.getElementById("quantity").value;
-            if (quantity === "" || Number(quantity) < 1) {
-                document.getElementById("quantityError").textContent = "Please enter a quantity of 1 kg or more.";
-                valid = false;
-            } else {
-                document.getElementById("quantityError").textContent = "";
-            }
-
-            if (!document.querySelector('input[name="contactMethod"]:checked')) {
-                document.getElementById("methodError").textContent = "Please choose how we should contact you.";
-                valid = false;
-            } else {
-                document.getElementById("methodError").textContent = "";
-            }
-
-            if (!valid) {
-                response.textContent = "Please fix the errors above and try again.";
-                return false;
-            }
-
-            // 3. Send the form to Formspree and show a message on this page
-            response.textContent = "Sending your enquiry...";
-
-            fetch(form.action, {
-                method: "POST",
-                body: new FormData(form),
-                headers: { "Accept": "application/json" }
-            })
-            .then(function (result) {
-                if (result.ok) {
-                    response.textContent = "Thank you! Your enquiry has been sent. We will contact you soon.";
-                    form.reset();
-                } else {
-                    response.textContent = "Sorry, something went wrong. Please try again later.";
-                }
-            })
-            .catch(function () {
-                response.textContent = "Sorry, we could not send your enquiry. Please check your connection and try again.";
-            });
-
-            return false;
-        }
-    </script>
 </body>
 </html>
 
