@@ -217,8 +217,6 @@ td img:hover {
     border-radius: 10px;
 }
 
-/* ------------------------------------------------------------ */
-
 .content {
     flex: 1;
     width: 100%;
@@ -246,6 +244,15 @@ textarea:focus{
 tr:hover {
     background-color: #c2f4c1;
     /* Changes the background of the table row when hovered over */
+}
+
+.flexrow2 {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 20;
+    flex-direction: row;
+    align-content: center;
+    justify-self: center ;
 }
 
   /* Google Fonts (n.d.) Inter. Available at: https://fonts.google.com/specimen/Inter [Accessed on: 9 November 2026] */
